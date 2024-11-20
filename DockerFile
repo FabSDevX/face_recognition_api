@@ -12,12 +12,6 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
-# Copia el script de instalación de CMake
-COPY install_cmake.sh /app/install_cmake.sh
-
-# Ejecuta el script de instalación de CMake (si es necesario)
-RUN chmod +x /app/install_cmake.sh && /app/install_cmake.sh
-
 # Copia los archivos del proyecto
 COPY . /app
 
@@ -30,5 +24,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Exponemos el puerto (ajustarlo según la API)
 EXPOSE 5000
 
-# Comando para ejecutar el servidor de la API
-CMD ["python", "face_recognition_knn.py"]
+# Comando para ejecutar el servidor de la API utilizando gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "face_recognition_knn:app"]
