@@ -30,6 +30,11 @@ def predict(image, model):
     return names[0] if names else "Unknown"
 
 
+@app.route('/', methods=['GET'])
+def hello():
+    return jsonify({"message": "Hello, welcome to the face recognition API!"})
+    
+
 @app.route('/login', methods=['POST'])
 def login():
     """
