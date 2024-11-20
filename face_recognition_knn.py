@@ -66,4 +66,4 @@ def login():
         return jsonify({"error": f"Error predicting face: {str(e)}"}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=False)
+    app.run(debug=True, host='0.0.0.0', port=5000)
