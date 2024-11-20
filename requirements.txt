@@ -1,6 +1,6 @@
 pillow 
 flask
 python-dotenv
-cmake==3.31.0.1
+pybind11
 face_recognition
 numpy==1.26.4
