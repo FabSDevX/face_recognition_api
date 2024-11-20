@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 2,
     "builds": [
       {
         "src": "face_recognition_knn.py",
