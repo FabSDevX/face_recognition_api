@@ -1,7 +1,6 @@
---upgrade pip
 pillow 
 flask
 python-dotenv
-cmake
-numpy==1.26.4
+cmake==3.31.0.1
 face_recognition
+numpy==1.26.4
