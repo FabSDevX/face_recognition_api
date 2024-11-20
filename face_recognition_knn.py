@@ -49,6 +49,7 @@ def login():
         # Cargar y convertir la imagen a un formato compatible con OpenCV
         image = Image.open(image_file.stream)
         image = cv.cvtColor(np.array(image), cv.COLOR_RGB2BGR)
+        logging.info("Image loaded and converted successfully.")
     except Exception as e:
         logging.error(f"Error processing image: {str(e)}")
         return jsonify({"error": "Error processing image"}), 500
@@ -56,6 +57,7 @@ def login():
     try:
         # Predecir el nombre utilizando el modelo KNN
         person_name = predict(image, loaded_knn_clf)
+        logging.info(f"Prediction result: {person_name}")
 
         if person_name == "Unknown":
             return jsonify({"found": False, "message": "Persona no registrada."}), 200
@@ -64,6 +66,7 @@ def login():
     except Exception as e:
         logging.error(f"Error predicting face: {str(e)}")
         return jsonify({"error": f"Error predicting face: {str(e)}"}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
