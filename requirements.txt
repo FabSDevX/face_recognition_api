@@ -1,4 +1,6 @@
 pillow 
 flask
 python-dotenv
+cmake
+numpy==1.26.4
 face_recognition
