@@ -1,7 +1,5 @@
 pillow 
 flask
 python-dotenv
-dlib==19.24.6
-pybind11
 face_recognition
 numpy==1.26.4

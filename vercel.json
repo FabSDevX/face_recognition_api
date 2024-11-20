@@ -1,18 +1,9 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "face_recognition_knn.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "face_recognition_knn.py"
-      }
-    ],
-    "env": {
-    "CMAKE_VERSION": "3.31.0.1"
-  }
-  } 
+  "version": 2,
+  "builds": [
+    {
+      "src": "Dockerfile",
+      "use": "@vercel/docker"
+    }
+  ]
+}
