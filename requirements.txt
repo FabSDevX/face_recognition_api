@@ -1,0 +1,4 @@
+pillow 
+flask
+python-dotenv
+face_recognition
